@@ -9,12 +9,12 @@ datasource db {
 model Item {
   id     String @id @default(uuid())
   name   String
-  weight Float
+  weight Int
   imageUrl String?
 }
 
 model LimitPreset {
   id        String @id @default(uuid())
   name      String
-  maxWeight Float
+  maxWeight Int
 }

@@ -2,14 +2,14 @@ export const typeDefs = `#graphql
   type Item {
     id: ID!
     name: String!
-    weight: Float!
+    weight: Int!
     imageUrl: String
   }
 
   type LimitPreset {
     id: ID!
     name: String!
-    maxWeight: Float!
+    maxWeight: Int!
   }
 
   type Query {
