@@ -1,30 +1,18 @@
 export const typeDefs = `#graphql
-  type Category {
-    id: ID!
-    name: String!
-    items: [Item!]!
-  }
-
   type Item {
     id: ID!
     name: String!
-    weightGrams: Int!
-    categoryId: ID!
-    category: Category!
-    isCarryOnOk: Boolean!
-    isCheckedOk: Boolean!
+    weight: Float!
+    imageUrl: String
   }
 
   type LimitPreset {
     id: ID!
     name: String!
-    carryOnMaxGrams: Int
-    checkedMaxGrams: Int
-    note: String
+    maxWeight: Float!
   }
 
   type Query {
-    categories: [Category!]!
     items: [Item!]!
     limitPresets: [LimitPreset!]!
   }
