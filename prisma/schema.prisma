@@ -10,6 +10,7 @@ model Item {
   id     String @id @default(uuid())
   name   String
   weight Float
+  imageUrl String?
 }
 
 model LimitPreset {
