@@ -13,7 +13,7 @@ async function main() {
 
   await prisma.item.createMany({
     data: [
-      { name: "의류 묶음(상의/하의)", weight: 1.5 },
+      { name: "의류 묶음(상의/하의)", weight: 1.5, imageUrl: "/images/items/clothes.png" },
       { name: "속옷·양말 묶음", weight: 0.6 },
       { name: "여벌 신발(운동화/슬리퍼)", weight: 0.8 },
       { name: "세면도구 파우치", weight: 0.7 },
