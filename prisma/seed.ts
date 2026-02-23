@@ -13,16 +13,16 @@ async function main() {
 
   await prisma.item.createMany({
     data: [
-      { name: "의류 묶음(상의/하의)", weight: 1.5, imageUrl: "/images/items/clothes.png" },
-      { name: "속옷·양말 묶음", weight: 0.6 },
-      { name: "여벌 신발(운동화/슬리퍼)", weight: 0.8 },
-      { name: "세면도구 파우치", weight: 0.7 },
-      { name: "샴푸·바디워시 등 액체류 파우치", weight: 1.0 },
-      { name: "기초 화장품 파우치(선크림 포함)", weight: 0.8 },
-      { name: "상비약/구급 파우치", weight: 0.3 },
-      { name: "압축파우치/정리 파우치 세트", weight: 0.4 },
-      { name: "접이식 에코백/보조가방", weight: 0.2 },
-      { name: "기념품/쇼핑 묶음(초기값)", weight: 2.0 },
+      { name: "의류 묶음(상의/하의)", weight: 10, imageUrl: "/images/items/clothes.png" },
+      { name: "속옷·양말 묶음", weight: 5 },
+      { name: "여벌 신발(운동화/슬리퍼)", weight: 5 },
+      { name: "세면도구 파우치", weight: 5 },
+      { name: "샴푸·바디워시 등 액체류 파우치", weight: 5 },
+      { name: "기초 화장품 파우치(선크림 포함)", weight: 5 },
+      { name: "상비약/구급 파우치", weight: 5 },
+      { name: "압축파우치/정리 파우치 세트", weight: 5 },
+      { name: "접이식 에코백/보조가방", weight: 5 },
+      { name: "기념품/쇼핑 묶음(초기값)", weight: 2 },
     ],
   });
 
