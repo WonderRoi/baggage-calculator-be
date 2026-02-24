@@ -11,10 +11,12 @@ model Item {
   name   String
   weight Int
   imageUrl String?
+  sortOrder Int     @default(0)
 }
 
 model LimitPreset {
   id        String @id @default(uuid())
   name      String
   maxWeight Int
+  sortOrder Int     @default(0)
 }
