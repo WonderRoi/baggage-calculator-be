@@ -1,9 +1,10 @@
-import { itemTypeDefs } from "../modules/item";
-import { limitPresetTypeDefs } from "../modules/limitPreset";
+import { itemModule } from "../modules/item";
+import { limitPresetModule } from "../modules/limitPreset";
 
-export const typeDefs =
-  `#graphql
+const baseTypeDefs = `#graphql
   type Query
-` +
-  itemTypeDefs +
-  limitPresetTypeDefs;
+`;
+
+const modules = [itemModule, limitPresetModule];
+
+export const typeDefs = [baseTypeDefs, ...modules.map((m) => m.typeDefs)];
