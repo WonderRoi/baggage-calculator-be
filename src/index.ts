@@ -2,8 +2,9 @@ import "dotenv/config";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-import { typeDefs } from "./schema";
-import { resolvers } from "./resolvers";
+import { typeDefs } from "./graphql/schema";
+import { resolvers } from "./graphql/resolvers";
+import { createContext } from "./context";
 
 async function start() {
   const server = new ApolloServer({
@@ -15,6 +16,7 @@ async function start() {
 
   const { url } = await startStandaloneServer(server, {
     listen: { port },
+    context: async () => createContext(),
   });
 
   console.log(`GraphQL ready at ${url}`);

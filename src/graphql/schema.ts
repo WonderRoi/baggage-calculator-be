@@ -1,19 +1,9 @@
-export const typeDefs = `#graphql
-  type Item {
-    id: ID!
-    name: String!
-    weight: Int!
-    imageUrl: String
-  }
+import { itemTypeDefs } from "../modules/item";
+import { limitPresetTypeDefs } from "../modules/limitPreset";
 
-  type LimitPreset {
-    id: ID!
-    name: String!
-    maxWeight: Int!
-  }
-
-  type Query {
-    items: [Item!]!
-    limitPresets: [LimitPreset!]!
-  }
-`;
+export const typeDefs =
+  `#graphql
+  type Query
+` +
+  itemTypeDefs +
+  limitPresetTypeDefs;

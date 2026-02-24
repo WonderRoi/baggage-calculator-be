@@ -1,12 +1,9 @@
-import { prisma } from "./prisma";
+import { itemResolvers } from "../modules/item";
+import { limitPresetResolvers } from "../modules/limitPreset";
 
 export const resolvers = {
   Query: {
-    items: async () => {
-      return prisma.item.findMany({ orderBy: { name: "asc" } });
-    },
-    limitPresets: async () => {
-      return prisma.limitPreset.findMany({ orderBy: { name: "asc" } });
-    },
+    ...itemResolvers.Query,
+    ...limitPresetResolvers.Query,
   },
 };
