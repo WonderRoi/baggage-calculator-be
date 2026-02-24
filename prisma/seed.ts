@@ -13,16 +13,17 @@ async function main() {
 
   await prisma.item.createMany({
     data: [
-      { name: "의류 묶음(상의/하의)", weight: 10, imageUrl: "/images/items/clothes.png" },
-      { name: "속옷·양말 묶음", weight: 5 },
-      { name: "여벌 신발(운동화/슬리퍼)", weight: 5 },
-      { name: "세면도구 파우치", weight: 5 },
-      { name: "샴푸·바디워시 등 액체류 파우치", weight: 5 },
-      { name: "기초 화장품 파우치(선크림 포함)", weight: 5 },
-      { name: "상비약/구급 파우치", weight: 5 },
-      { name: "압축파우치/정리 파우치 세트", weight: 5 },
-      { name: "접이식 에코백/보조가방", weight: 5 },
-      { name: "기념품/쇼핑 묶음(초기값)", weight: 2 },
+      //ex: { name: "clothes", weight: 10, imageUrl: "/images/items/clothes.png" },
+      { name: "의류", weight: 6 },
+      { name: "속옷", weight: 2 },
+      { name: "신발", weight: 4 },
+      { name: "세면도구", weight: 1 },
+      { name: "화장품", weight: 2 },
+      { name: "전자기기", weight: 4 },
+      { name: "충전기", weight: 1 },
+      { name: "상비약", weight: 1 },
+      { name: "기념품", weight: 8 },
+      { name: "기타", weight: 5 },
     ],
   });
 
@@ -31,7 +32,6 @@ async function main() {
       { name: "LCC 기본 (15kg)", maxWeight: 15 },
       { name: "일반 항공 평균 (20kg)", maxWeight: 20 },
       { name: "국제선 이코노미 (23kg)", maxWeight: 23 },
-      { name: "미주 노선 평균 (23kg x 2)", maxWeight: 46 },
       { name: "비즈니스 클래스 (32kg)", maxWeight: 32 },
     ],
   });
