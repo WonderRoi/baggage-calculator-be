@@ -1,139 +1,41 @@
-# 📦 Baggage Calculator – Backend
+# ✈️ Baggage Calculator - Backend
 
-GraphQL API server for the **Baggage Calculator** project.
-
-Built with:
-
-* Node.js
-* Apollo Server
-* GraphQL
-* Prisma ORM (v7)
-* MySQL
+Prisma ORM 기반 MySQL 데이터베이스를 Apollo Server(GraphQL)로 노출하는 백엔드 API 서버입니다.
 
 ---
 
-## 🚀 Tech Stack
+## 🛠 Tech Stack
 
-| Layer    | Tech                    |
-| -------- | ----------------------- |
-| Runtime  | Node.js                 |
-| API      | GraphQL (Apollo Server) |
-| ORM      | Prisma 7                |
-| Database | MySQL                   |
-| Language | TypeScript              |
-
----
-
-## 📁 Project Structure
-
-```
-.
-├── src
-│   ├── index.ts        # Apollo server entry
-│   ├── prisma.ts       # Prisma client setup
-│   ├── schema.ts       # GraphQL typeDefs
-│   └── resolvers.ts    # GraphQL resolvers
-│
-├── prisma
-│   ├── schema.prisma
-│   └── migrations
-│
-├── prisma.config.ts
-├── package.json
-└── tsconfig.json
-```
+- Node.js
+- Apollo Server v5
+- TypeScript
+- MySQL
+- Prisma ORM
+- MariaDB Adapter (MySQL 호환)
 
 ---
 
-## ⚙️ Setup (Local Development)
+## 🚀 실행 방법
 
-### 1️⃣ Install dependencies
+1. 환경 변수 설정 (.env)
 
-```bash
-npm install
-```
+DATABASE_URL="mysql://user:password@localhost:3306/baggage_calculator_db"
 
----
+2. Prisma 설정
 
-### 2️⃣ Setup MySQL
-
-Create database:
-
-```sql
-CREATE DATABASE baggage;
-CREATE USER 'app'@'localhost' IDENTIFIED BY 'your_password';
-GRANT ALL PRIVILEGES ON baggage.* TO 'app'@'localhost';
-GRANT CREATE, DROP ON *.* TO 'app'@'localhost';
-FLUSH PRIVILEGES;
-```
-
----
-
-### 3️⃣ Environment variables
-
-Create `.env` file:
-
-```env
-DATABASE_URL="mysql://app:your_password@localhost:3306/baggage"
-PORT=4000
-```
-
----
-
-### 4️⃣ Run migrations
-
-```bash
+npx prisma generate
 npx prisma migrate dev
-```
 
----
+3. 서버 실행
 
-### 5️⃣ Start server
-
-```bash
 npm run dev
-```
 
-Server runs at:
-
-```
-http://localhost:4000
-```
+GraphQL Endpoint
+http://localhost:4000/graphql
 
 ---
 
-## 📡 Example GraphQL Query
+## 📦 Seed 데이터
 
-```graphql
-query {
-  categories {
-    id
-    name
-  }
-}
-```
+npx prisma db seed
 
----
-
-## 🧠 Architecture Notes
-
-* Prisma 7 requires `prisma.config.ts`
-* MySQL connection uses `@prisma/adapter-mariadb`
-* Database migrations are version-controlled
-* `.env` is excluded from Git
-
----
-
-## 📌 Future Improvements
-
-* Authentication (JWT)
-* User-specific baggage sessions
-* Deployment configuration
-* Docker support
-* CI/CD pipeline
-
----
-
-## 👤 Author
-
-Seongmin Park
